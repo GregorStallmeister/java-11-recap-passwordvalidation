@@ -225,9 +225,9 @@ public class PasswordValidationTest {
         boolean actual = true; // to be &-ded with test results, whether it meets the criteria for secure passwords
 
         // when
-        for (int i = 0; i < 101; i++) {
+        for (int i = 0; i < 100; i++) {
             password = PasswordValidation.createSecurePassword();
-            actual = PasswordValidation.passwordContainsAtleast8Chars(password);
+            actual = actual & PasswordValidation.passwordContainsAtleast8Chars(password);
             actual = actual & PasswordValidation.passwordContainsDigits(password);
             actual = actual & PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
             actual = actual & (!PasswordValidation.passwordContainsCommonlyUsedPassword(password));
