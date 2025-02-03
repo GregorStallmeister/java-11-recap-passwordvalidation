@@ -28,6 +28,8 @@ public class PasswordValidation {
             System.out.println("Your password meets (or not meets) the following criteria:");
             System.out.println("is least 8 chars long: " + passwordContainsAtleast8Chars(passwordToBeChecked));
             System.out.println("contains at least 1 digit: " + passwordContainsDigits(passwordToBeChecked));
+            System.out.println("contains both uppercase and lowercase: " + passwordContainsBothUppercaseAndLowercase(passwordToBeChecked));
+            System.out.println("contains a commonly used password: " + passwordContainsCommonlyUsedPassword(passwordToBeChecked));
         }
 
     }
