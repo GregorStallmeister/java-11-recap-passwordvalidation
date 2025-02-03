@@ -222,18 +222,18 @@ public class PasswordValidationTest {
     public void createSecurePasswordExpectCreatedPasswordMeetsAllCriteria() {
         // given
         String password; // to be initialized with random password
-        boolean actual = true; // to be &-ded with test reults, whether it meets the cirteria for secure passwords
+        boolean actual; // to be initialized and &-ded with test reults, whether it meets the cirteria for secure passwords
 
         // when
         password = PasswordValidation.createSecurePassword();
-        actual = actual & PasswordValidation.passwordContainsAtleast8Chars(password);
+        actual = PasswordValidation.passwordContainsAtleast8Chars(password);
         actual = actual & PasswordValidation.passwordContainsDigits(password);
         actual = actual & PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
         actual = actual & (! PasswordValidation.passwordContainsCommonlyUsedPassword(password));
         actual = actual & PasswordValidation.passWordContainsSpacialCharacter(password);
 
         // then
-        assertEquals(true, actual);
+        assertTrue(actual);
     }
 }
 
