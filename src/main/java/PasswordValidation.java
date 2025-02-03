@@ -43,4 +43,15 @@ public class PasswordValidation {
     public static boolean passwordContainsBothUppercaseAndLowercase(String password) {
         return password.matches(".*[a-z]+.*") & password.matches(".*[A-Z]+.*");
     }
+
+    public static boolean passwordContainsCommonlyUsedPassword(String password) {
+        String[] commonlyUsedPasswords = {"Password1", "test1234", "password"};
+
+        for (String commonlyUsedPassword : commonlyUsedPasswords) {
+            if (password.matches(".*" + commonlyUsedPassword + ".*"))
+                return true;
+        }
+
+        return false;
+    }
 }

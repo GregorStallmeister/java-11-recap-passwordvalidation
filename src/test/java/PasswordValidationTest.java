@@ -152,5 +152,31 @@ public class PasswordValidationTest {
         // then
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void passwordContainsCommonlyUsedPasswordExpectedTrueWhenSomeIsGiven() {
+        // given
+        String password = "myPassword1IsSafe";
+        boolean expected = true;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsCommonlyUsedPassword(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsCommonlyUsedPasswordExpectedFalseWhenNoneIsGiven() {
+        // given
+        String password = "myPasswordIsNowSafe";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsCommonlyUsedPassword(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
 }
 
