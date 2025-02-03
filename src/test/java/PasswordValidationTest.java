@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PasswordValidationTest {
 
@@ -203,6 +203,24 @@ public class PasswordValidationTest {
 
         // then
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void createSecurePasswordExpectedPasswordWhenCalled() {
+        // given
+        String password = null;
+
+        // when
+        password = PasswordValidation.createSecurePassword();
+
+        // then
+        assertNotNull(password);
+        assertNotEquals("", password);
+    }
+
+    @Test
+    public void createSecurePasswordExpectCreatedPasswordMeetsAllCriteria() {
+
     }
 }
 
