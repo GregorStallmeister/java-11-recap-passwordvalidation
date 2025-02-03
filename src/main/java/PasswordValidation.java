@@ -40,7 +40,7 @@ public class PasswordValidation {
             System.out.println("contains at least 1 digit: " + passwordContainsDigits(passwordToBeChecked));
             System.out.println("contains both uppercase and lowercase: " + passwordContainsBothUppercaseAndLowercase(passwordToBeChecked));
             System.out.println("contains a commonly used password: " + passwordContainsCommonlyUsedPassword(passwordToBeChecked));
-            System.out.println("contains a special character: " + passWordContainsSpacialCharacter(passwordToBeChecked));
+            System.out.println("contains a special character: " + passwordContainsSpacialCharacter(passwordToBeChecked));
         }
 
     }
@@ -68,7 +68,7 @@ public class PasswordValidation {
         return false;
     }
 
-    public static boolean passWordContainsSpacialCharacter(String password) {
+    public static boolean passwordContainsSpacialCharacter(String password) {
         StringBuilder regExBuilder = new StringBuilder(".*[");
         for (char specialCharacter : specialCharacters)
             regExBuilder.append(specialCharacter);

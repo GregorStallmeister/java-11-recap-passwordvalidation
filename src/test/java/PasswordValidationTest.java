@@ -180,26 +180,26 @@ public class PasswordValidationTest {
     }
 
     @Test
-    public void passWordContainsSpacialCharacterExpectedTrueWhenSomeIsGiven() {
+    public void passwordContainsSpacialCharacterExpectedTrueWhenSomeIsGiven() {
         // given
         String password = "$";
         boolean expected = true;
 
         // when
-        boolean actual = PasswordValidation.passWordContainsSpacialCharacter(password);
+        boolean actual = PasswordValidation.passwordContainsSpacialCharacter(password);
 
         // then
         assertEquals(expected, actual);
     }
 
     @Test
-    public void passWordContainsSpacialCharacterExpectedFalseWhenNoneIsGiven() {
+    public void passwordContainsSpacialCharacterExpectedFalseWhenNoneIsGiven() {
         // given
         String password = "C";
         boolean expected = false;
 
         // when
-        boolean actual = PasswordValidation.passWordContainsSpacialCharacter(password);
+        boolean actual = PasswordValidation.passwordContainsSpacialCharacter(password);
 
         // then
         assertEquals(expected, actual);
@@ -230,7 +230,7 @@ public class PasswordValidationTest {
         actual = actual & PasswordValidation.passwordContainsDigits(password);
         actual = actual & PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
         actual = actual & (! PasswordValidation.passwordContainsCommonlyUsedPassword(password));
-        actual = actual & PasswordValidation.passWordContainsSpacialCharacter(password);
+        actual = actual & PasswordValidation.passwordContainsSpacialCharacter(password);
 
         // then
         assertTrue(actual);
