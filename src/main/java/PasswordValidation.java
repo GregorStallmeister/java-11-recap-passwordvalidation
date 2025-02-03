@@ -39,4 +39,8 @@ public class PasswordValidation {
     public static boolean passwordContainsDigits(String password) {
         return password.matches(".*[0-9]+.*");
     }
+
+    public static boolean passwordContainsBothUppercaseAndLowercase(String password) {
+        return password.matches(".*[a-z]+.*") & password.matches(".*[A-Z]+.*");
+    }
 }

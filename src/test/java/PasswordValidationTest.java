@@ -84,5 +84,73 @@ public class PasswordValidationTest {
         // then
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void passwordContainsBothUppercaseAndLowercaseExpectedTrueWhenBothAreGiven() {
+        // given
+        String password = "Cc";
+        boolean expected = true;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsBothUppercaseAndLowercaseExpectedFalseWhenUppercaseOnlyIsGiven() {
+        // given
+        String password = "C";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsBothUppercaseAndLowercaseExpectedFalseWhenLowercaseOnlyIsGiven() {
+        // given
+        String password = "c";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsBothUppercaseAndLowercaseExpectedFalseWhenDigitsOnlyAreGiven() {
+        // given
+        String password = "42";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsBothUppercaseAndLowercaseExpectedTrueWhenSeveralCombinationsAreGiven() {
+        // given
+        String[] passwords = {"tEst1234", "12A34test", "te1234St"};
+        boolean expected = true;
+        boolean actual = true;
+
+        // when
+        for (String password : passwords) {
+            actual = actual & PasswordValidation.passwordContainsBothUppercaseAndLowercase(password);
+        }
+
+        // then
+        assertEquals(expected, actual);
+    }
 }
 
