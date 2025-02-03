@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Passwordvalidationtest {
+public class PasswordValidationTest {
 
     @Test
     public void passwordContainsAtleast8CharsExpectedTrueWhen8CharsGiven() {
@@ -11,7 +11,7 @@ public class Passwordvalidationtest {
         boolean expected = true;
 
         // when
-        boolean actual = Passwordvalidation.passwordContainsAtleast8Chars(password);
+        boolean actual = PasswordValidation.passwordContainsAtleast8Chars(password);
 
         // then
         assertEquals(expected, actual);
@@ -24,7 +24,7 @@ public class Passwordvalidationtest {
         boolean expected = true;
 
         // when
-        boolean actual = Passwordvalidation.passwordContainsAtleast8Chars(password);
+        boolean actual = PasswordValidation.passwordContainsAtleast8Chars(password);
 
         // then
         assertEquals(expected, actual);
@@ -37,7 +37,7 @@ public class Passwordvalidationtest {
         boolean expected = false;
 
         // when
-        boolean actual = Passwordvalidation.passwordContainsAtleast8Chars(password);
+        boolean actual = PasswordValidation.passwordContainsAtleast8Chars(password);
 
         // then
         assertEquals(expected, actual);

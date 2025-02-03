@@ -1,11 +1,11 @@
 /**
  * A simple class with functions to validate passwords
  */
-public class Passwordvalidation {
+public class PasswordValidation {
 
     /**
      *
-     * @param args
+     * @param args - not used in function
      */
     public static void main(String[] args) {
         System.out.println("Welcome to George's password validation!");
