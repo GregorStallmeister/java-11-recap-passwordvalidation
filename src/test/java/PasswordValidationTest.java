@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PasswordValidationTest {
+public class Passwordvalidationtest {
 
     @Test
     public void passwordContainsAtleast8CharsExpectedTrueWhen8CharsGiven() {

@@ -1,3 +1,6 @@
+import java.util.Objects;
+import java.util.Scanner;
+
 /**
  * A simple class with functions to validate passwords
  */
@@ -8,7 +11,24 @@ public class PasswordValidation {
      * @param args - not used in function
      */
     public static void main(String[] args) {
+        String passwordToBeChecked = "";
+        Scanner inputScanner = new Scanner(System.in);
+
         System.out.println("Welcome to George's password validation!");
+
+        while (! passwordToBeChecked.equals("q")) {
+            System.out.println();
+            System.out.println("Please enter your password, which has to be checked or q to quit: ");
+            passwordToBeChecked = inputScanner.nextLine();
+
+            if (Objects.equals(passwordToBeChecked, "q"))
+                continue;
+
+            System.out.println();
+            System.out.println("Your password meets (or not meets) the following criteria:");
+            System.out.println("At least 8 chars long: " + passwordContainsAtleast8Chars(passwordToBeChecked));
+        }
+
     }
 
     public static boolean passwordContainsAtleast8Chars(String password) {
