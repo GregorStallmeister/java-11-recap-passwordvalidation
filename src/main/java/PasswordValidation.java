@@ -47,7 +47,7 @@ public class PasswordValidation {
     }
 
     public static boolean passwordContainsCommonlyUsedPassword(String password) {
-        String[] commonlyUsedPasswords = {"Password1", "test1234", "password"};
+        String[] commonlyUsedPasswords = {"Password1", "Aa345678", "test1234", "password"};
 
         for (String commonlyUsedPassword : commonlyUsedPasswords) {
             if (password.matches(".*" + commonlyUsedPassword + ".*"))
