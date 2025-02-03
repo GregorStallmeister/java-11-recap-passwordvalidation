@@ -5,7 +5,7 @@ import java.util.Scanner;
  * A simple class with functions to validate passwords
  */
 public class PasswordValidation {
-    private static char[] specialCharacters = {'$', '%', '&', '!', '?', '*', '+', '~'};
+    private static final char[] specialCharacters = {'$', '%', '&', '!', '?', '*', '+', '~'};
 
     /**
      *
