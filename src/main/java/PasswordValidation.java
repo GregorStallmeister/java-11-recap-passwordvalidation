@@ -5,6 +5,7 @@ import java.util.Scanner;
  * A simple class with functions to validate passwords
  */
 public class PasswordValidation {
+    private static char[] specialCharacters = {'$', '%', '&', '!', '?', '*', '+', '~'};
 
     /**
      *
@@ -59,6 +60,11 @@ public class PasswordValidation {
     }
 
     public static boolean passWordContainsSpacialCharacter(String password) {
-        return password.matches(".*[$%&!?*+~]+.*");
+        StringBuilder regExBuilder = new StringBuilder(".*[");
+        for (char specialCharacter : specialCharacters)
+            regExBuilder.append(specialCharacter);
+        regExBuilder.append("]+.*");
+
+        return password.matches(regExBuilder.toString());
     }
 }

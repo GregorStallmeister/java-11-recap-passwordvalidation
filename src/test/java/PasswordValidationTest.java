@@ -193,7 +193,7 @@ public class PasswordValidationTest {
     }
 
     @Test
-    public void passWordContainsSpacialCharacterExpectedFalsWhenNoneIsGiven() {
+    public void passWordContainsSpacialCharacterExpectedFalseWhenNoneIsGiven() {
         // given
         String password = "C";
         boolean expected = false;
