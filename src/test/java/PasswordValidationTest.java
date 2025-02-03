@@ -178,5 +178,31 @@ public class PasswordValidationTest {
         // then
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void passWordContainsSpacialCharacterExpectedTrueWhenSomeIsGiven() {
+        // given
+        String password = "$";
+        boolean expected = true;
+
+        // when
+        boolean actual = PasswordValidation.passWordContainsSpacialCharacter(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passWordContainsSpacialCharacterExpectedFalsWhenNoneIsGiven() {
+        // given
+        String password = "C";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passWordContainsSpacialCharacter(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
 }
 
