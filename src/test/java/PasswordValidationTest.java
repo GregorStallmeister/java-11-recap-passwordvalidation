@@ -208,7 +208,7 @@ public class PasswordValidationTest {
     @Test
     public void createSecurePasswordExpectedPasswordWhenCalled() {
         // given
-        String password = null;
+        String password; // is not initialized, therefore it is null!
 
         // when
         password = PasswordValidation.createSecurePassword();
