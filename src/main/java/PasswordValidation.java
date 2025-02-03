@@ -26,12 +26,17 @@ public class PasswordValidation {
 
             System.out.println();
             System.out.println("Your password meets (or not meets) the following criteria:");
-            System.out.println("At least 8 chars long: " + passwordContainsAtleast8Chars(passwordToBeChecked));
+            System.out.println("is least 8 chars long: " + passwordContainsAtleast8Chars(passwordToBeChecked));
+            System.out.println("contains at least 1 digit: " + passwordContainsDigits(passwordToBeChecked));
         }
 
     }
 
     public static boolean passwordContainsAtleast8Chars(String password) {
         return password.length() >= 8;
+    }
+
+    public static boolean passwordContainsDigits(String password) {
+        return password.matches(".*[0-9]+.*");
     }
 }

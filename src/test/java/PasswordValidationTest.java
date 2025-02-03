@@ -42,5 +42,47 @@ public class PasswordValidationTest {
         // then
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void passwordContainsDigitsExpectedTrueWhenDigitIsGiven() {
+        // given
+        String password = "1";
+        boolean expected = true;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsDigits(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsDigitsExpectedFalseWhenNoDigitIsGiven() {
+        // given
+        String password = "d";
+        boolean expected = false;
+
+        // when
+        boolean actual = PasswordValidation.passwordContainsDigits(password);
+
+        // then
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void passwordContainsDigitsExpectedTrueWhenCombinationsOfCharsAndDigitsAreGiven() {
+        // given
+        String[] passwords = {"test1234", "1234test", "te1234st"};
+        boolean expected = true;
+        boolean actual = true;
+
+        // when
+        for (String password : passwords) {
+            actual = actual & PasswordValidation.passwordContainsDigits(password);
+        }
+
+        // then
+        assertEquals(expected, actual);
+    }
 }
 
