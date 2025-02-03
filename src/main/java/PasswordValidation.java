@@ -79,7 +79,7 @@ public class PasswordValidation {
 
     public static String createSecurePassword() {
         Random charCodeGenerator = new Random();
-        char[] passwordChars = new char[12];
+        char[] passwordChars = new char[16];
 
         for (int i = 0; i < 4; i++)
         {
@@ -97,6 +97,12 @@ public class PasswordValidation {
         {
             int charCode = charCodeGenerator.nextInt(0, specialCharacters.length -  1);
             passwordChars[i] = specialCharacters[charCode];
+        }
+
+        for (int i = 12; i < 16; i++)
+        {
+            int charCode = charCodeGenerator.nextInt(48, 58);
+            passwordChars[i] = (char)charCode;
         }
 
         // Now randomize the chars by Fisher-Yates Shuffle
